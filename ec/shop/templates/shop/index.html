@@ -10,6 +10,7 @@
 
     <title>Homepage</title>
       <style>
+        
            .col-md-3
           {
           display: inline-block;
@@ -22,7 +23,7 @@
 
           
           .carousel-indicators .active {
-          background-color: blue;
+          background-color: white;
             }
 
           .col-md-3 img{
@@ -32,11 +33,12 @@
           }
 
           body .carousel-indicator li{
-          background-color: blue;
+          background-color: white;
           }
 
           body .carousel-indicators{
           bottom: 0;
+
           }
 
           body .carousel-control-prev-icon,
@@ -52,11 +54,15 @@
           padding-top:222px;
           }
           body{
-              background-color: rgb(248 250 252);
+              
+              background-image:  url('../static/shop/bg.jpg');
+
+    
+    
           }
           .card{
               
-              box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+              box-shadow: 0 10px 15px -3px rgb(14 12 12 / 1.58), 0 4px 6px -4px rgb(0 0 0 / 0.1);
           }
            body .no-padding{
            padding-left: 0,
@@ -66,11 +72,12 @@
            }
   </style>
   </head>
-  <body bg-gradient-to-r from-violet-500 to-fuchsia-500>
+  <body >
   {% load static %}
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary " style="box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 10px 6px -4px rgb(0 0 0 / 0.1);">
-  <a class="navbar-brand" href="/shop">Ecomm</a>
+
+  <a class="navbar-brand" href="/shop" >Iota</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -92,26 +99,28 @@
         <a class="nav-link" href="/shop/contact">Contact Us</a>
       </li>
 
+      <li class="nav-item active">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+
     </ul>
 
 
-<button type="button" class="btn btn-primary mx-2" id="popcart" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+<a href="/shop/checkout/"><button type="button" class="btn btn-primary mx-2" id="popcart" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus.">
-  <b>Cart</b>
+  <strong><b>Cart</b></strong>
 
 <svg class="V3C5bO" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="_1bS9ic" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
 
 
   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     <span id="cart"></span>
-</button>
+</button></a>
 
-      <form class="form-inline my-2 my-lg-0">
+      <form method='get' action='/shop/search/' class="form-inline my-2 my-lg-0">
         <div>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-light " type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-</svg></button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+      
 
       </form>
 
@@ -123,7 +132,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 <div class="container">
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
-    <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
+    <h5 class="my-4 ">Flash Sale On {{product.0.category}} - Recommended Items</h5>
     <div class="row">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
             <ul class="carousel-indicators">
@@ -132,7 +141,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
                 <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
                 {% endfor %}
             </ul>
-            <div class="container carousel-inner no-padding">
+            <div class="container carousel-inner padding">
                 <div class="carousel-item active">
                     {% for i in product %}
                     <div class="col-xs-3 col-sm-3 col-md-3">
@@ -151,7 +160,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                    {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
                 </div>
                 <div class="carousel-item">
                     {% endif %}

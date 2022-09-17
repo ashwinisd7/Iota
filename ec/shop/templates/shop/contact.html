@@ -33,10 +33,19 @@
     <label for="desc">How May We Help You?</label>
     <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
   </div>
-        <button class=" btn btn-outline-success " type="submit" style="margin-top:7px">Submit</button>
+        <button class=" btn btn-danger " type="submit" style="margin-top:7px">Submit</button>
 </form>
 
 
 
 </div>
 {% endblock %}
+{% block js %}
+<script type="text/javascript">
+{% if thank %}
+alert("Thanks for contacting us.")
+localStorage.clear();
+document.location = "/shop/contact"
+{% endif %}
+</script>
+{% endblock%}

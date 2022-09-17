@@ -1,0 +1,54 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+<div class="container">
+	<div class="row g-5 mt-4">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        {{post.title}}
+      </h3>
+
+      <article class="blog-post">
+        <h1 class="blog-post-title mb-1"><strong>{{post.head0}}</strong></h1>
+        <p class="blog-post-meta">{{post.pub_date}} by <a>{{post.name}}</a></p>
+
+        <p>{{post.chead0}}</p>
+        
+        
+        <h2>{{post.head1}}</h2>
+        <p>{{post.chead1}}</p>
+        <h2>{{post.head2}}</h2>
+        <p>{{post.chead2}}</p>
+        
+      </article>
+
+      
+
+      
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">Iota is a project developed in Django,HTML/CSS,Bootstrap,Js with database as sqlite3 which focuses on e-commerce. It is one of the projects I've made in my B.Tech.
+              Iota was made by Ashwini 0905cs201040 ITM Gwalior. It contains all the major functionalities that a real e-commerce website will have including product view,search,tracker,cart etc. Initially an online marketplace for books, it has expanded into a multitude of product categories.</p> 
+
+        
+
+        <div class="p-4">
+          <h4 class="fst-italic">Contact Us:</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}
